@@ -2,20 +2,23 @@
 
 <body>
 
-    
-<main>
-    <div class="ui segment">
-      <h1>Les ecoles du Maroc</h1>   
-   
-      <ul>
-          <% universities.forEach(function(university) { %>
-            <li class="ui segment">
-              <%= university.name %> at <%= university.country %>.
-            </li>
-          <% }); %>
-        </ul>
-   
-   </div>
+
+    <main>
+        <div class="ui segment">
+            <h1>Les ecoles
+                <%= universities[0].country %>
+            </h1>
+
+            <ul>
+                <% universities.forEach(function(university) { %>
+                    <li class="ui segment">
+                        <%= university.name %>
+
+                    </li>
+                    <% }); %>
+            </ul>
+
+        </div>
     </main>
 </body>
 
