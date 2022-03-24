@@ -16,9 +16,6 @@ const universityController = {
     },
 };
 
-
-
-
 module.exports = {
     universityController
 }
