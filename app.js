@@ -1,16 +1,18 @@
-var express = require("express");
+const express = require("express");
 const axios = require('axios');
-const cors = require('cors');
 
-const END_POINT = 'http://universities.hipolabs.com/search?country=morocco';
+const app = express();
+const SERVER_PORT = 3000
 
-var app = express();
-app.use(cors( { origin: '*'}));
+
+const GET_UNIVERSITIES_URL = 'http://universities.hipolabs.com/search?country=morocco';
+
 app.set("view engine", "ejs");
-app.listen(3000, () => {
-    app.get('/', async (req, res) => { 
+
+app.listen(SERVER_PORT, () => {
+    app.get('/universities', async (req ,res) => { 
         try {
-            const { data } =  await axios.get(END_POINT);
+            const { data } =  await axios.get(GET_UNIVERSITIES_URL);
             res.render("index", {
               universities: data,
               });
