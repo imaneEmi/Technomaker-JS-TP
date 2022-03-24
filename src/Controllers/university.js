@@ -5,9 +5,10 @@ const universityController = {
    
     getUniversities: async (req, res, next) => {
         try {
-           const {data} = await universityService.universityService.get("Morocco"); 
+           const {data} = await universityService.universityService.get(req.params.country); 
            res.render("index", {
             universities: data,
+            country : req.params.country
             });
         } catch (error) {
            error.msg = "failed to retrieve universities data";
