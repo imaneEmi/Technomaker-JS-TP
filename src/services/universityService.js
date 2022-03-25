@@ -2,17 +2,22 @@ const axios = require('axios');
 
 const GET_UNIVERSITIES_URL = 'http://universities.hipolabs.com/search?country=';
 
-
-
 const universityService = {
-   
-    get: async (country) => {
+
+    get: async(country) => {
         try {
-            return  await axios.get(GET_UNIVERSITIES_URL + country);
+            return await axios.get(GET_UNIVERSITIES_URL + country);
         } catch (ex) {
-           ex.data;
+            ex.data;
+        }
+    },
+    getAll: async() => {
+        try {
+            return await axios.get(GET_UNIVERSITIES_URL);
+        } catch (ex) {
+            ex.data;
         }
     }
 }
 
-module.exports = {universityService}
+module.exports = { universityService }
