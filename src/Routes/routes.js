@@ -15,16 +15,13 @@ router.post('/universities', getUniversitiesByCountry)
 
 router.get('/universities-of-the-world', getAllUniversities)
 
-router.get("/", function(req, res) {
+router.get("/universities", function(req, res) {
     res.render("form");
 });
 
-router.use(function(req,res){
+router.use(function(req, res) {
     res.status(404).render('error-404');
 });
-
-
-
 
 
 module.exports = router

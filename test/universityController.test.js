@@ -4,8 +4,8 @@ let should = chai.should();
 chai.use(chaiHttp);
 let app = require('../app');
 
-describe('Get All Universities', () => {
-    it('it should GET all the universities', () => {
+describe('UniversityController', () => {
+    it(' should GET all the universities', () => {
         chai.request(app)
             .get('/universities-of-the-world')
             .end((err, res) => {
@@ -13,11 +13,9 @@ describe('Get All Universities', () => {
                 res.body.should.be.an('array');
             });
     });
-});
 
-describe('Get All Universities of a Given Country', () => {
-    it('it should Retun all universities of given country', () => {
-        let country = "Morocco"
+    it(' should Retun all universities of given country', () => {
+        const country = "Morocco"
         chai.request(app)
             .post('/universities')
             .send(country)
