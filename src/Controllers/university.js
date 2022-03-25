@@ -1,11 +1,12 @@
-const universityService = require('../services/universityService')
+const {universityService} = require('../services/universityService')
 
+var bodyParser=require("body-parser");
 
 const universityController = {
 
     getUniversities: async(req, res, next) => {
         try {
-           const {data} = await universityService.universityService.get(req.params.country); 
+           const {data} = await universityService.get(req.body.country); 
            res.render("index", {
             universities: data,
             });
