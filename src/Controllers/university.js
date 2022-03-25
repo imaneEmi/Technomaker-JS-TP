@@ -9,7 +9,7 @@ async function getUniversitiesByCountry(req, res, next) {
         const { data } = await getUniversitiesByCountryService(req.body.country);
         res.json(data);
     } catch (error) {
-        error.msg = "failed to retrieve universities data";
+        res.status(500).render("error-500")
     }
 }
 async function getAllUniversities(req, res, next) {
