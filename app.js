@@ -12,3 +12,5 @@ app.listen(SERVER_PORT, () => {
 });
 
 app.use('/', universities_routes)
+
+module.exports = app; // for testing
