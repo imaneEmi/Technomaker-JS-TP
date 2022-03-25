@@ -1,9 +1,19 @@
 const express = require('express')
 const router = express.Router()
-const { universityController } = require('../controllers/university')
+const {
+    getUniversitiesByCountry,
+    getAllUniversities
+} = require('../controllers/university')
 
-router.get('/universities/:country', universityController.getUniversities)
-router.get('/universities/', universityController.getAll)
+var bodyParser = require("body-parser");
+router.use(bodyParser.urlencoded({ extended: true }));
 
+router.post('/universities', getUniversitiesByCountry)
+
+router.get('/universities-of-the-world', getAllUniversities)
+
+router.get("/", function(req, res) {
+    res.render("form");
+});
 
 module.exports = router
