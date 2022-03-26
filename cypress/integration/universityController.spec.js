@@ -1,4 +1,4 @@
-describe("Forms test", () => {
+describe("University test", () => {
     it('cy.request() - make an XHR request', () => {
         cy.visit('/universities-of-the-world');
         cy.get('.table').find('tr').should('have.length', 9783)
