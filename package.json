@@ -4,7 +4,7 @@
     "description": "tp-js",
     "main": "index.js",
     "scripts": {
-        "test": "mocha",
+        "test": "cypress open",
         "start": "nodemon app.js"
     },
     "author": "we",
@@ -18,6 +18,7 @@
     "devDependencies": {
         "chai": "^4.3.6",
         "chai-http": "^4.3.0",
+        "cypress": "^9.5.2",
         "mocha": "^9.2.2",
         "nodemon": "^2.0.15"
     }
