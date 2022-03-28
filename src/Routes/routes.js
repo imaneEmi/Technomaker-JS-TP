@@ -15,8 +15,8 @@ router.post('/universities', getUniversitiesByCountry)
 
 router.get('/universities-of-the-world', getAllUniversities)
 
-router.get("/universities", function(req, res) {
-    res.render("form");
+router.get("/find-universities-by-country", function(req, res) {
+    res.render("form",{msg:""});
 });
 
 router.use(function(req, res) {
